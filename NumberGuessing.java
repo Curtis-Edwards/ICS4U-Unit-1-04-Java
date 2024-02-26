@@ -8,6 +8,7 @@
  */
 
 import java.util.Scanner;
+import java.util.Random;
 
 /**
 * This is the standard "NumberGuessing" program.
@@ -34,12 +35,13 @@ final class NumberGuessing {
     public static void main(String[] args) {
         // constants & variables
         final Scanner scanner = new Scanner(System.in);
+	Random random = new Random();
         final int randomNumber = random.nextInt(6) + 1;
         int totalGuesses = 0;
 	int userGuessInt = 0;
         boolean validInput = false;
 
-        while (1) {
+        while (true) {
             // input and error check
             try {
                 System.out.print("Guess a number between 1 - 6: ");
@@ -57,14 +59,14 @@ final class NumberGuessing {
             if (validInput) {
                 if (userGuessInt > randomNumber) {
                     totalGuesses += 1;
-                    console.log("You guessed too high, try again!\n");
+                    System.out.println("You guessed too high, try again!\n");
                 } else if (userGuessInt < randomNumber) {
                     totalGuesses += 1;
-                    console.log("You guessed too low, try again!\n");
+                    System.out.println("You guessed too low, try again!\n");
                 } else {
                     // output
                     totalGuesses += 1;
-                    console.log("Correct!\nTotal guesses: " + totalGuesses);
+                    System.out.println("Correct!\nTotal guesses: " + totalGuesses);
                     break;
                 }
             }
