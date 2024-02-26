@@ -1,5 +1,5 @@
 /*
- * This is a program creates a random number 
+ * This is a program creates a random number
  * that the user tries to guess
  *
  * @author  Curtis Edwards
@@ -7,8 +7,8 @@
  * @since   2024-02-26
  */
 
-import java.util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
 * This is the standard "NumberGuessing" program.
@@ -35,24 +35,25 @@ final class NumberGuessing {
     public static void main(String[] args) {
         // constants & variables
         final Scanner scanner = new Scanner(System.in);
-	    Random random = new Random();
+        final Random random = new Random();
         final int randomNumber = random.nextInt(6) + 1;
+        final int randomNumberMax = 6;
         int totalGuesses = 0;
-	    int userGuessInt = 0;
+        int userGuessInt = 0;
 
         while (true) {
             // input and error check
             boolean validInput = false;
             try {
                 System.out.print("Guess a number between 1 - 6: ");
-                String userGuessString = scanner.nextLine().trim();
+                final String userGuessString = scanner.nextLine().trim();
                 if (userGuessString.isEmpty()) {
                     System.out.println("Invalid input. (This won’t count as a guess)\n");
                 } else {
                     userGuessInt = Integer.parseInt(userGuessString);
-					if (userGuessInt < 1 || userGuessInt > 6) {
+                    if (userGuessInt < 1 || userGuessInt > randomNumberMax) {
                         System.out.println("Invalid input. (This won’t count as a guess)\n");
-				    } else {
+                    } else {
                         validInput = true;
                     }
                 }
@@ -75,6 +76,6 @@ final class NumberGuessing {
                 }
             }
         }
-    System.out.println("\nDone.");
+        System.out.println("\nDone.");
     }
 }
