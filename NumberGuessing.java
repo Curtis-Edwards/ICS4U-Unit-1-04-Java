@@ -64,15 +64,13 @@ final class NumberGuessing {
             }
             // process
             if (validInput) {
+                totalGuesses += 1;
                 if (userGuessInt > randomNumber) {
-                    totalGuesses += 1;
                     System.out.println("You guessed too high, try again!\n");
                 } else if (userGuessInt < randomNumber) {
-                    totalGuesses += 1;
                     System.out.println("You guessed too low, try again!\n");
                 } else {
                     // output
-                    totalGuesses += 1;
                     System.out.println(
                         "Correct!\nTotal guesses: " + totalGuesses
                     );
