@@ -38,8 +38,8 @@ final class NumberGuessing {
         final Random random = new Random();
         final int randomNumber = random.nextInt(6) + 1;
         final int randomNumberMax = 6;
-        final String invalidInputString = 
-            "Invalid input. (This won’t count as a guess)\n"
+        final String invalidInputString =
+            "Invalid input. (This won’t count as a guess)\n";
         int totalGuesses = 0;
         int userGuessInt = 0;
 
