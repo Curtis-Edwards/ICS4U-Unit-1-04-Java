@@ -35,6 +35,8 @@ final class NumberGuessing {
         // constants & variables
         final int randomNumber = random.nextInt(6) + 1;
         int totalGuesses = 0;
+	
+	int userGuessInt = 0;
         boolean validInput = false;
 
         while (1) {
@@ -42,10 +44,10 @@ final class NumberGuessing {
             try {
                 System.out.print("Guess a number between 1 - 6: ");
                 final String userGuessString = scanner.nextLine().trim();
-                if (objectMassString.isEmpty()) {
+                if (userGuessString.isEmpty()) {
                     System.out.println("Invalid input. (This won’t count as a guess)\n");
                 } else {
-                    final userGuessInt = Integer.parseInt(userGuessString);
+                    userGuessInt = Integer.parseInt(userGuessString);
                     validInput = true;
                 }
             } catch (NumberFormatException ex) {
