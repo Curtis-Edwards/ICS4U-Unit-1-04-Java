@@ -33,9 +33,9 @@ final class NumberGuessing {
     */
     public static void main(String[] args) {
         // constants & variables
+        final Scanner scanner = new Scanner(System.in);
         final int randomNumber = random.nextInt(6) + 1;
         int totalGuesses = 0;
-	
 	int userGuessInt = 0;
         boolean validInput = false;
 
@@ -43,7 +43,7 @@ final class NumberGuessing {
             // input and error check
             try {
                 System.out.print("Guess a number between 1 - 6: ");
-                final String userGuessString = scanner.nextLine().trim();
+                String userGuessString = scanner.nextLine().trim();
                 if (userGuessString.isEmpty()) {
                     System.out.println("Invalid input. (This won’t count as a guess)\n");
                 } else {
