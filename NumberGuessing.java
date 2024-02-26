@@ -38,6 +38,8 @@ final class NumberGuessing {
         final Random random = new Random();
         final int randomNumber = random.nextInt(6) + 1;
         final int randomNumberMax = 6;
+        final String invalidInputString = 
+            "Invalid input. (This won’t count as a guess)\n"
         int totalGuesses = 0;
         int userGuessInt = 0;
 
@@ -48,17 +50,17 @@ final class NumberGuessing {
                 System.out.print("Guess a number between 1 - 6: ");
                 final String userGuessString = scanner.nextLine().trim();
                 if (userGuessString.isEmpty()) {
-                    System.out.println("Invalid input. (This won’t count as a guess)\n");
+                    System.out.println(invalidInputString);
                 } else {
                     userGuessInt = Integer.parseInt(userGuessString);
                     if (userGuessInt < 1 || userGuessInt > randomNumberMax) {
-                        System.out.println("Invalid input. (This won’t count as a guess)\n");
+                        System.out.println(invalidInputString);
                     } else {
                         validInput = true;
                     }
                 }
             } catch (NumberFormatException ex) {
-                System.out.println("Invalid input. (This won’t count as a guess)\n");
+                System.out.println(invalidInputString);
             }
             // process
             if (validInput) {
@@ -71,7 +73,9 @@ final class NumberGuessing {
                 } else {
                     // output
                     totalGuesses += 1;
-                    System.out.println("Correct!\nTotal guesses: " + totalGuesses);
+                    System.out.println(
+                        "Correct!\nTotal guesses: " + totalGuesses
+                    );
                     break;
                 }
             }
